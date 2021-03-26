@@ -11,13 +11,12 @@ use PDO;
 class DataService
 {
     private $logger;
-    
-    /**
+        /**
      * Instantiates the object with a database connection
      *
      * @param ILoggerService $logger
      */
-    public function __construct($logger)
+    public function __construct(ILoggerService $logger)
     {
         $this->logger = $logger;
     }
@@ -29,6 +28,7 @@ class DataService
      */
     public static function connect()
     {
+        $this->logger->info("Entering DataService.connect()");
         $servername = config("database.connections.mysql.host");
         $port = config("database.connections.mysql.port");
         $username = config("database.connections.mysql.username");
@@ -36,6 +36,7 @@ class DataService
         $dbname = config("database.connections.mysql.database");
         $db = new PDO("mysql:host=$servername;port=$port;dbname=$dbname", $username, $password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+         $this->logger->info("Exiting DataService.connect()");
         return $db;
     }
 }
