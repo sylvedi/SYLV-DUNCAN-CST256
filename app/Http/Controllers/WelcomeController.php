@@ -33,6 +33,7 @@ class WelcomeController extends Controller
         $this->logger->info("WelcomeControlller.index() - Accessing home page");
         // Return homepage with job data
         $j = new JobController($this->logger);
+         $this->logger->info(" Exitign WelcomeControlller.index()");
         return $j->displayJobs($request);
         
     }
