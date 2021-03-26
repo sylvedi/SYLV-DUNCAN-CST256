@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\Utility\ILoggerService;
 
 class DebugController extends Controller
 {
@@ -20,7 +21,10 @@ class DebugController extends Controller
     
     
     public function scratchPad(Request $request){
-        
+        $this->logger->info("Enter DebugController.scratchPad()");
+            
+            
+        $this->logger->info("Exiting DebugController.scratchPad()");
         return view("createGroup");
         
     }
