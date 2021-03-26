@@ -1,6 +1,6 @@
 <?php
 namespace App\Services\Business;
-
+use App\Services\Utility\ILoggerService;
 use PDO;
 
 /**
@@ -10,6 +10,17 @@ use PDO;
  */
 class DataService
 {
+    private $logger;
+    
+    /**
+     * Instantiates the object with a database connection
+     *
+     * @param ILoggerService $logger
+     */
+    public function __construct($logger)
+    {
+        $this->logger = $logger;
+    }
 
     /**
      * Get a connection to the database
