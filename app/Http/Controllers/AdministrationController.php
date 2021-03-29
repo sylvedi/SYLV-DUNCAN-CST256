@@ -24,6 +24,7 @@ class AdministrationController extends Controller
      */
     public function __construct(ILoggerService $logger)
     {
+         // Create logger   
         $this->logger = $logger;
     }
     
