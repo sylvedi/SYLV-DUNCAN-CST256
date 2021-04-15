@@ -26,7 +26,7 @@ class DataService
      *
      * @return \PDO
      */
-    public static function connect()
+    public function connect()
     {
         $this->logger->info("Entering DataService.connect()");
         $servername = config("database.connections.mysql.host");
