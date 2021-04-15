@@ -1,6 +1,5 @@
 <?php
 namespace App\Services\Business;
-
 use PDO;
 
 /**
